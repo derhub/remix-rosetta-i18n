@@ -16,15 +16,15 @@ export type I8nOptions<T> = {
     onChange?: () => void;
 };
 
-export function createI18n<T = any>(options?: I8nOptions<T>): I8nContext<T> {
-    let i18n = options?.instance ?? rosetta<T>();
+export function createI18n<T = any>(options: I8nOptions<T> = {}): I8nContext<T> {
+    let i18n = options.instance ?? rosetta<T>();
 
-    if (options?.locale && options?.dict) {
-        i18n.set(options?.locale, options?.dict);
+    if (options.locale && options.dict) {
+        i18n.set(options.locale, options.dict);
     }
 
-    if (options?.locale) {
-        i18n.locale(options?.locale);
+    if (options.locale) {
+        i18n.locale(options.locale);
     }
 
     return {
