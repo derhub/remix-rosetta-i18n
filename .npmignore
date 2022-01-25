@@ -1,0 +1,8 @@
+.github
+src
+test
+.gitignore
+.npmignore
+.npmrc
+tsconfig.json
+example
