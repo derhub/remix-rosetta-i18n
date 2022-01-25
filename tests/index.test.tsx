@@ -7,6 +7,7 @@ import rosetta from 'rosetta';
 it('renders translated text', () => {
     let resources = { test: 'this is test!!' };
 
+    let r = rosetta();
     function Child() {
         const { t } = useI18n();
         return <p>{t('test')}</p>;
@@ -14,7 +15,7 @@ it('renders translated text', () => {
 
     function Root() {
         return (
-            <I18nProvider dict={resources} locale="en">
+            <I18nProvider dict={resources} locale="en" i18n={r}>
                 <Child />
             </I18nProvider>
         );
