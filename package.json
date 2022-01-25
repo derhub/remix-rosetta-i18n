@@ -4,12 +4,10 @@
     "description": "Lightweight i18n solution for your remix app",
     "sideEffects": false,
     "main": "dist/index.js",
-    "files": [
-        "dist"
-    ],
     "scripts": {
-        "build": "npm run build:main",
+        "build": "npm run clean && npm run build:main",
         "build:main": "tsc --project tsconfig.json --module CommonJS --outDir ./dist",
+        "clean": "rimraf ./dist",
         "ts-check:": "tsc --noEmit",
         "test": "jest",
         "prepare": "husky install"
@@ -58,5 +56,8 @@
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
+    },
+    "dependencies": {
+        "rimraf": "^3.0.2"
     }
 }

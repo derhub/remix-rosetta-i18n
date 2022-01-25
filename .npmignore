@@ -5,4 +5,13 @@ test
 .npmignore
 .npmrc
 tsconfig.json
-example
+examples
+.husky
+.idea
+.vscode
+tests
+
+jest.config.ts
+setupTest.ts
+babel.config.js
+.*
