@@ -1,6 +1,6 @@
 {
     "name": "remix-rosetta-i18n",
-    "version": "0.0.1",
+    "version": "0.0.2-0",
     "description": "Lightweight i18n solution for your remix app",
     "sideEffects": false,
     "main": "./dist/index.js",
