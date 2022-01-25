@@ -1,8 +1,9 @@
 import { renderToString } from 'react-dom/server';
 import { RemixServer } from 'remix';
 import type { EntryContext } from 'remix';
-import { I18nProvider } from 'remix-rosetta-i18';
+import { I18nProvider } from 'remix-rosetta-i18n';
 import rosetta from 'rosetta';
+import { getLocale } from './getLocale';
 
 export default function handleRequest(
     request: Request,
@@ -11,8 +12,10 @@ export default function handleRequest(
     remixContext: EntryContext
 ) {
     let r = rosetta();
+    let locale = getLocale(new URL(request.url).pathname);
+    console.log(locale);
     const markup = renderToString(
-        <I18nProvider i18n={r} locale="en">
+        <I18nProvider i18n={r} locale={locale}>
             <RemixServer context={remixContext} url={request.url} />
         </I18nProvider>
     );
