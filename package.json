@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "description": "Lightweight i18n solution for your remix app",
     "sideEffects": false,
-    "main": "dist/index.js",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "scripts": {
         "build": "npm run clean && npm run build:main",
         "build:main": "tsc --project tsconfig.json --module CommonJS --outDir ./dist",
